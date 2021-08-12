@@ -13,7 +13,8 @@ module.exports = {
       colors: {
         'myblue': '#42ACF2',
         'myviolet': '#B042F2',
-        'light-blue': '#3bb4ff54'
+        'light-blue': '#3bb4ff54',
+        'overlay': '#0000002c'
       }
      },
    },
