@@ -1,73 +1,5 @@
 <template>
   <div>
-    <div class="landing flex flex-col md:flex-row h-screen">
-      <div class="box-left w-full md:w-1/2 h-72 md:h-full">
-        <img
-          class="w-full h-full"
-          src="~assets/images/intro-cover-1.jpeg"
-          alt="man with laptop and headphone"
-        />
-      </div>
-      <div
-        class="
-          box-right
-          flex
-          items-center
-          justify-center
-          pb-10
-          lg:pb-0
-          w-full
-          lg:w-1/2
-          px-8
-          lg:px-16
-          mt-16
-          lg:mt-0
-        "
-      >
-        <div class="content">
-          <h1 class="font-bold text-6xl">
-            Enregistrez et partagez vos musiques maintenant
-          </h1>
-          <h2 class="font-normal text-2xl mt-6 mb-6">
-            Rejoingnez nous dès aujourd'hui
-          </h2>
-          <div class="content-link flex flex-col">
-            <div class="signup_btn">
-              <nuxt-link to="/signup">
-                <button
-                  class="
-                    bg-myblue
-                    text-white text-lg
-                    font-medium
-                    rounded-full
-                    px-28
-                    py-2
-                  "
-                >
-                  S'inscrire
-                </button>
-              </nuxt-link>
-            </div>
-            <div class="login_btn mt-3">
-              <nuxt-link to="/login">
-                <button
-                  class="
-                    text-lg
-                    font-medium
-                    rounded-full
-                    px-24
-                    py-2
-                    border-2 border-light-blue
-                  "
-                >
-                  Se connecter
-                </button>
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="signup absolute flex justify-center w-full h-full top-0 left-0">
       <div
         class="overlay bg-myviolet w-screen h-screen fixed top-0 left-0"
@@ -86,6 +18,43 @@
           shadow-lg
         "
       >
+        <div
+          class="
+            register_loading
+            absolute
+            flex
+            items-center
+            justify-center
+            bg-white
+            rounded-lg
+            -mt-2
+            -ml-6
+            px-10
+            w-96
+            h-full
+            md:border-0
+            z-30
+          "
+          :class="registerLoading ? 'block' : 'hidden'"
+        >
+          <img
+            src="~assets/svg/oval.svg"
+            alt="spinner loader"
+            :class="spinner ? 'block' : 'hidden'"
+          />
+          <div
+            class="register_info text-center"
+            :class="!spinner ? 'block' : 'hidden'"
+          >
+            <p class="text-xl font-medium mb-14">
+              Merci d'avoir rejoins MuseX ! <br />
+              Vous pouvez maintenant vous connecter.
+            </p>
+            <nuxt-link to="/login">
+              <button class="text-lg text-white font-medium rounded-full px-24 py-2">Se connecter</button>
+            </nuxt-link>
+          </div>
+        </div>
         <p class="text-center text-xl font-bold text-myviolet">
           S'inscrire sur Musix
         </p>
@@ -245,6 +214,7 @@
                 font-medium
                 mt-6
               "
+              @click="redisterUser"
             >
               S'inscrire
             </button>
@@ -277,10 +247,28 @@ export default {
       password: '',
       goodPassword: false,
       submit: false,
+      registerLoading: false,
+      spinner: false,
+      registerResponse: true,
     }
   },
   methods: {
-    redisterUser() {},
+    redisterUser(e) {
+      this.registerLoading = true
+      this.spinner = true
+      e.preventDefault()
+      const data = {
+        fullname: this.fullName,
+        email: this.email,
+        username: this.userName,
+        pseudo: this.pseudo,
+        password: this.password,
+      }
+      console.log(data)
+      setTimeout(() => {
+        this.spinner = false
+      }, 1500)
+    },
     showHidePassword() {
       const passwordField = document.querySelector('#password')
       const eyeHide = document.querySelector('#eye_hide')
@@ -428,6 +416,10 @@ export default {
   cursor: default;
   opacity: 0.7;
   pointer-events: none;
+}
+
+.register_loading .register_info button {
+  background: linear-gradient(45deg, #B042F2, #42ACF2);
 }
 
 @media (max-width: 460px) {
