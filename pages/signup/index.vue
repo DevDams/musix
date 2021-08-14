@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="signup absolute flex justify-center w-full h-full top-0 left-0">
+    <div class="signup absolute flex justify-center w-full top-0 left-0">
       <div
         class="overlay bg-myviolet w-screen h-screen fixed top-0 left-0"
       ></div>
       <div
         class="
           signup_form
-          absolute
+          relative
           bg-white
           rounded-lg
           py-2
@@ -30,7 +30,7 @@
             -mt-2
             -ml-6
             px-10
-            w-96
+            w-full
             h-full
             md:border-0
             z-30
@@ -422,33 +422,23 @@ export default {
   background: linear-gradient(45deg, #B042F2, #42ACF2);
 }
 
-@media (max-width: 460px) {
-  .landing .content h1 {
-    font-size: 48px;
-  }
-
-  .landing .content h2 {
-    font-size: 20px;
-  }
-}
-
 @media (max-width: 400px) {
   .signup_form {
     width: 98%;
   }
 }
 
-@media (max-width: 365px) {
-  .landing .content-link button {
+@media (max-width: 385px) {
+  .register_loading .register_info button {
     font-size: 16px;
+    padding-right: 60px;
+    padding-left: 60px;
   }
+}
 
-  .landing .content-link .signup_btn button {
-    padding: 6px 95px;
-  }
-
-  .landing .content-link .login_btn button {
-    padding: 6px 80px;
+@media (max-height: 650px) {
+  .signup .signup_form {
+    margin-bottom: 40px;
   }
 }
 </style>
