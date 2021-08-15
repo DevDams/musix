@@ -2,7 +2,7 @@
   <div>
     <div class="login">
       <div class="login_form w-80 mx-auto mt-20">
-        <p class="text-3xl font-semibold">Se connecter</p>
+        <p class="text-3xl font-extrabold">Se connecter à <br> MuseX</p>
         <form action="" class="w-full mt-10">
           <div class="pseudo">
             <input
@@ -41,7 +41,10 @@
               @click="showHidePassword"
             />
           </div>
-          <div class="alert text-center mt-3" :class="error ? 'block' : 'hidden'">
+          <div
+            class="alert text-center mt-3"
+            :class="error ? 'block' : 'hidden'"
+          >
             <p class="text-red-500">Pseudo et/ou mot de passe incorrect</p>
           </div>
           <div class="submit_btn mt-6">
@@ -73,11 +76,11 @@ export default {
       pseudo: '',
       password: '',
       submit: false,
-      error: false
+      error: false,
     }
   },
   methods: {
-    login () {},
+    login() {},
     showHidePassword() {
       const passwordField = document.querySelector('#password')
       const eyeHide = document.querySelector('#eye_hide')
@@ -92,7 +95,7 @@ export default {
         eyeHide.style.display = 'none'
       }
     },
-    allowSubmit () {
+    allowSubmit() {
       if (this.pseudo !== '' && this.password !== '') {
         this.submit = true
         console.log('fill')
@@ -103,8 +106,8 @@ export default {
       } else {
         this.submit = false
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
