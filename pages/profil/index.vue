@@ -17,7 +17,7 @@
           justify-center
         "
       >
-        <h1 class="text-2xl text-myviolet font-extrabold">MuseX</h1>
+        <h1 class="text-2xl text-myviolet font-extrabold">Profil</h1>
       </div>
     </div>
   </div>

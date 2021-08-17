@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar w-64 h-screen flex flex-col justify-between px-6">
+    <div class="navbar fixed w-64 h-screen flex flex-col justify-between px-6">
       <div class="navbar_items pt-10">
         <nuxt-link to="/home">
           <button
@@ -17,8 +17,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/home.svg" alt="home icon" />
-            <span class="ml-2 font-semibold">accueil</span>
+            <img src="~assets/svg/home-3.svg" alt="home icon" />
+            <span class="ml-2 font-normal">Accueil</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/audios">
@@ -36,8 +36,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/speaker.svg" alt="home icon" />
-            <span class="ml-2 font-semibold">mes audios</span>
+            <img src="~assets/svg/speaker.svg" alt="audio icon" />
+            <span class="ml-2 font-normal">Mes audios</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/profil">
@@ -55,8 +55,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/user.svg" alt="home icon" />
-            <span class="ml-2 font-semibold">profil</span>
+            <img src="~assets/svg/user.svg" alt="user icon" />
+            <span class="ml-2 font-normal">Profil</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/post">
@@ -74,8 +74,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/create.svg" alt="home icon" />
-            <span class="ml-2 font-semibold">publier</span>
+            <img src="~assets/svg/create.svg" alt="post icon" />
+            <span class="ml-2 font-normal">Publier</span>
           </button>
         </nuxt-link>
       </div>
@@ -118,9 +118,10 @@ img {
 .nuxt-link-exact-active button {
   background: #f3f4f6;
 }
+
 @media (max-width: 996px) {
   .navbar {
-    width: 120px;
+    width: 90px;
   }
 
   button {
@@ -134,6 +135,16 @@ img {
 
   button span {
     display: none;
+  }
+
+  .logout button {
+    margin-left: 0;
+    width: 50px;
+    height: 50px;
+  }
+
+  .logout button img {
+    margin-left: -3px;
   }
 }
 </style>
