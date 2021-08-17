@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'twixtter',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },

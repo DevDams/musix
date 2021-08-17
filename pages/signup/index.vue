@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="signup absolute flex justify-center w-full top-0 left-0">
-      <div
-        class="overlay bg-myviolet w-screen h-screen fixed top-0 left-0"
-      ></div>
+      <div class="overlay bg-white w-screen h-screen fixed top-0 left-0"></div>
       <div
         class="
           signup_form
@@ -51,7 +49,11 @@
               Vous pouvez maintenant vous connecter.
             </p>
             <nuxt-link to="/login">
-              <button class="text-lg text-white font-medium rounded-full px-24 py-2">Se connecter</button>
+              <button
+                class="text-lg text-white font-medium rounded-full px-24 py-2"
+              >
+                Se connecter
+              </button>
             </nuxt-link>
           </div>
         </div>
@@ -393,8 +395,8 @@ export default {
 </script>
 
 <style scoped>
-.landing .box-left img {
-  object-fit: cover;
+.signup_form {
+  border: 2px solid #eaeaea;
 }
 
 .signup form input {
@@ -419,7 +421,7 @@ export default {
 }
 
 .register_loading .register_info button {
-  background: linear-gradient(45deg, #B042F2, #42ACF2);
+  background: linear-gradient(45deg, #b042f2, #42acf2);
 }
 
 @media (max-width: 400px) {
