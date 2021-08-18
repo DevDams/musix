@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="navbar bg-white px-6 fixed w-full h-14 bottom-0 flex items-center z-20">
+    <div class="navbar bg-white px-6 fixed w-full h-16 bottom-0 flex items-center z-20">
       <div class="navbar_item w-96 mx-auto flex items-center justify-between">
         <nuxt-link to="/home">
-          <button class="w-11 h-11 rounded-full flex items-center justify-center">
+          <button class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="~assets/svg/home-3.svg" alt="home icon" />
           </button>
         </nuxt-link>
         <nuxt-link to="/audios">
-          <button class="w-11 h-11 rounded-full flex items-center justify-center">
+          <button class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="~assets/svg/speaker.svg" alt="audio icon" />
           </button>
         </nuxt-link>
         <nuxt-link to="/post">
-          <button class="w-11 h-11 rounded-full flex items-center justify-center">
+          <button class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="~assets/svg/create.svg" alt="post icon" />
           </button>
         </nuxt-link>
         <nuxt-link to="/profil">
-          <button class="w-11 h-11 rounded-full flex items-center justify-center">
+          <button class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="~assets/svg/user.svg" alt="user icon" />
           </button>
         </nuxt-link>
         <nuxt-link to="/login">
-          <button class="w-11 h-11 rounded-full flex items-center justify-center">
+          <button class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="~assets/svg/exit-2.svg" alt="exit icon" />
           </button>
         </nuxt-link>
