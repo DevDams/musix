@@ -59,7 +59,7 @@
             <span class="ml-2 font-normal">Profil</span>
           </button>
         </nuxt-link>
-        <nuxt-link to="/post">
+        <nuxt-link to="/new/post">
           <button
             class="
               mt-4

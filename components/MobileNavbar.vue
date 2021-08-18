@@ -43,7 +43,7 @@
             />
           </button>
         </nuxt-link>
-        <nuxt-link to="/post" class="post_link">
+        <nuxt-link to="/new/post" class="post_link">
           <button class="w-14 h-14 rounded-xl flex items-center justify-center">
             <img
               src="~assets/svg/create-black.svg"
