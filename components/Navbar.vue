@@ -17,7 +17,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/home-3.svg" alt="home icon" />
+            <img src="~assets/svg/home-black.svg" alt="home icon" />
             <span class="ml-2 font-normal">Accueil</span>
           </button>
         </nuxt-link>
@@ -36,7 +36,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/speaker.svg" alt="audio icon" />
+            <img src="~assets/svg/speaker-black.svg" alt="audio icon" />
             <span class="ml-2 font-normal">Mes audios</span>
           </button>
         </nuxt-link>
@@ -55,7 +55,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/user.svg" alt="user icon" />
+            <img src="~assets/svg/user-black.svg" alt="user icon" />
             <span class="ml-2 font-normal">Profil</span>
           </button>
         </nuxt-link>
@@ -74,7 +74,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/create.svg" alt="post icon" />
+            <img src="~assets/svg/create-black.svg" alt="post icon" />
             <span class="ml-2 font-normal">Publier</span>
           </button>
         </nuxt-link>
@@ -95,7 +95,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/exit.svg" alt="home icon" />
+            <img src="~assets/svg/exit-black.svg" alt="home icon" />
             <span class="ml-2 text-md text-white font-semibold"
               >Se déconnecter</span
             >
