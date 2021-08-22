@@ -17,8 +17,9 @@
               outline-none
             "
           >
-            <img src="~assets/svg/home-black.svg" alt="home icon" />
-            <span class="ml-2 font-normal">Accueil</span>
+            <img src="~assets/svg/home-black.svg" alt="home icon" class="black" />
+            <img src="~assets/svg/home-white.svg" alt="home icon" class="white" />
+            <span class="ml-2 font-semibold">Accueil</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/audios">
@@ -36,8 +37,9 @@
               outline-none
             "
           >
-            <img src="~assets/svg/speaker-black.svg" alt="audio icon" />
-            <span class="ml-2 font-normal">Mes audios</span>
+            <img src="~assets/svg/speaker-black.svg" alt="audio icon" class="black" />
+            <img src="~assets/svg/speaker-white.svg" alt="audio icon" class="white" />
+            <span class="ml-2 font-semibold">Mes audios</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/profil">
@@ -55,8 +57,9 @@
               outline-none
             "
           >
-            <img src="~assets/svg/user-black.svg" alt="user icon" />
-            <span class="ml-2 font-normal">Profil</span>
+            <img src="~assets/svg/user-black.svg" alt="user icon" class="black" />
+            <img src="~assets/svg/user-white.svg" alt="user icon" class="white" />
+            <span class="ml-2 font-semibold">Profil</span>
           </button>
         </nuxt-link>
         <nuxt-link to="/new/post">
@@ -74,8 +77,9 @@
               outline-none
             "
           >
-            <img src="~assets/svg/create-black.svg" alt="post icon" />
-            <span class="ml-2 font-normal">Publier</span>
+            <img src="~assets/svg/create-black.svg" alt="post icon" class="black" />
+            <img src="~assets/svg/create-white.svg" alt="post icon" class="white" />
+            <span class="ml-2 font-semibold">Publier</span>
           </button>
         </nuxt-link>
       </div>
@@ -95,7 +99,7 @@
               outline-none
             "
           >
-            <img src="~assets/svg/exit-black.svg" alt="home icon" />
+            <img src="~assets/svg/exit-white.svg" alt="home icon" />
             <span class="ml-2 text-md text-white font-semibold"
               >Se déconnecter</span
             >
@@ -115,8 +119,25 @@ img {
   width: 30px;
 }
 
+button img.white {
+  display: none;
+}
+
+button img.black {
+  display: block;
+}
+
 .nuxt-link-exact-active button {
-  background: #f3f4f6;
+  background: linear-gradient(45deg, #b042f2, #42acf2);
+  color: white;
+}
+
+.nuxt-link-exact-active button img.white {
+  display: block;
+}
+
+.nuxt-link-exact-active button img.black {
+  display: none;
 }
 
 @media (max-width: 996px) {
