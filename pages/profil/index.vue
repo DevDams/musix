@@ -2,7 +2,7 @@
   <div class="home mx-auto flex">
     <Navbar class="desktop" />
     <MobileNavbar class="mobile" />
-    <div class="content_block relative w-full h-screen">
+    <div class="content_block relative w-full">
       <div
         class="
           header
@@ -15,6 +15,7 @@
           items-center
           text-center
           justify-center
+          z-20
         "
       >
         <h1 class="text-2xl text-myviolet font-extrabold">Profil</h1>
@@ -44,8 +45,9 @@
           </div>
         </div>
       </div>
-      <div class="user_posts w-full px-12 pt-12">
-        <div class="post flex border">
+      <div class="user_posts w-full px-8 pt-12">
+        <!-- Post model -->
+        <div class="post flex border py-3 px-5 rounded-lg">
           <div class="pp">
             <div class="w-16 h-16 rounded-full bg-indigo-500">
               <img src="" alt="">
@@ -59,12 +61,32 @@
             <div class="post_description">
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus placeat commodi delectus tenetur ullam maiores atque voluptatib rovident obcaecati hic.</p>
             </div>
-            <div class="audio">
-              <audio src=""></audio>
+            <div class="audio mt-4">
+              <div class="music-player h-16 flex items-center shadow-md rounded-xl border-2 border-gray-600 p-4">
+                <div class="controls">
+                  <div class="play-pause -mt-1">
+                    <img src="~/assets/svg/play.svg" alt="">
+                  </div>
+                </div>
+                <div class="progress-area bg-gray-300 h-0.5 rounded-full w-full ml-3 -mt-1">
+                  <div class="progress-bar relative rounded-full"></div>
+                  <div class="timer flex items-center justify-between text-md text-gray-500 mt-1">
+                    <span class="current">0:00</span>
+                    <span class="duration"></span>
+                  </div>
+                  <audio class="main-audio" src=""></audio>
+                </div>
+              </div>
             </div>
-            <div class="post_action">
-              <div class="like">❤ 123</div>
-              <div class="share">🔁 321</div>
+            <div class="post_action w-56 flex justify-between mt-4">
+              <button class="like flex items-center">
+                <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6">
+                <span class="ml-1 font-medium text-gray-600">24</span>
+              </button>
+              <button class="like flex items-center">
+                <img src="~assets/svg/share.svg" alt="share icon" class="h-6 w-6">
+                <span class="ml-1 font-medium text-gray-600">24</span>
+              </button>
             </div>
           </div>
         </div>
@@ -112,6 +134,43 @@ export default {
 .profil_text {
   padding-bottom: 25px;
   border-bottom: 1px solid #e5e7eb;
+}
+
+/* Music player */
+
+.music-player {
+  width: 95%;
+  height: 65px;
+}
+
+.progress-area .progress-bar {
+  height: inherit;
+  width: 0;
+  background: linear-gradient(90deg, #42ACF2 0%,#B042F2 100%);
+}
+
+.progress-area .progress-bar::before {
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: inherit;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  background: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+}
+
+.controls .play-pause img {
+  user-select: none;
+  width: 28px;
+  cursor: pointer;
 }
 
 @media (max-width: 996px) {
