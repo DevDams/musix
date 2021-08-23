@@ -44,10 +44,10 @@
           </div>
         </div>
       </div>
-      <div class="user_posts w-full px-12 pt-12 bg-blue-200">
+      <div class="user_posts w-full px-12 pt-12">
         <div class="post flex border">
           <div class="pp">
-            <div class="w-16 h-16 rounded-full bg-black">
+            <div class="w-16 h-16 rounded-full bg-indigo-500">
               <img src="" alt="">
             </div>
           </div>
