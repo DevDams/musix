@@ -45,24 +45,21 @@
           </div>
         </div>
       </div>
-      <div class="user_posts w-full px-8 pt-12">
+      <div class="user_posts w-full px-6 pt-12">
         <!-- Post model -->
-        <div class="post flex border py-3 px-5 rounded-lg">
+        <div class="post flex border py-3 px-2 rounded-lg">
           <div class="pp">
             <div class="w-16 h-16 rounded-full bg-indigo-500">
               <img src="" alt="">
             </div>
           </div>
-          <div class="content ml-3 mt-1">
+          <div class="content ml-3 mt-1 w-full">
             <div class="user_info flex items-center">
               <div class="name font-semibold text-lg">Aimé-Désiré</div>
               <div class="pseudo ml-3 font-normal text-gray-500">@dams9ix</div>
             </div>
-            <div class="post_description">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus placeat commodi delectus tenetur ullam maiores atque voluptatib rovident obcaecati hic.</p>
-            </div>
-            <div class="audio mt-4">
-              <div class="music-player h-16 flex items-center shadow-md rounded-xl border-2 border-gray-600 p-4">
+            <div class="audio mt-4 w-full">
+              <div class="music-player w-full h-16 flex items-center shadow-md rounded-xl border-2 border-gray-600 p-4">
                 <div class="controls">
                   <div class="play-pause -mt-1">
                     <img src="~/assets/svg/play.svg" alt="">
