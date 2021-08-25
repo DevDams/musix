@@ -1,7 +1,7 @@
 <template>
   <div class="home mx-auto flex">
     <Navbar class="desktop" />
-    <MobileNavbar class="mobile" />
+    <MobileNavbar class="mobile pt-10" />
     <div class="content_block relative w-full">
       <div
         class="
@@ -9,7 +9,8 @@
           bg-white
           sticky
           top-0
-          w-auto
+          left-0
+          w-full
           h-12
           flex
           items-center
@@ -33,11 +34,13 @@
             <button class="border border-gray-300 font-semibold px-4 py-1 rounded-full bg-white">Editer le profil</button>
           </div>
         </div>
-        <div class="profil_text w-full h-38 mt-12 px-6">
+        <div class="profil_text w-full h-38 mt-14 px-6">
           <div>
             <p class="username text-2xl font-semibold">Aimé-Désiré</p>
             <p class="pseudo text-md text-gray-500 font-normal">@dams9ix</p>
-            <p class="mt-2 bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus placeat commodi delectus tenetur ullam maiores atque voluptatib rovident obcaecati hic.</p>
+            <p class="mt-2 bio">
+              Comme projet de fin de formation nous nous lançons dans la création d'un site de rencontre du style de meetic rencontre du style meetic.
+            </p>
             <div class="flex items-center mt-2">
               <img src="~assets/svg/calendar.svg" alt="calendar icon">
               <p class="text-gray-500 ml-2">A rejoint MuseX en mars 2021</p>
@@ -47,16 +50,25 @@
       </div>
       <div class="user_posts w-full px-6 pt-12">
         <!-- Post model -->
-        <div class="post flex border py-3 px-2 rounded-lg">
+        <div class="post flex border py-3 px-2 mb-24 rounded-lg">
           <div class="pp">
-            <div class="w-16 h-16 rounded-full bg-indigo-500">
+            <div class="pp w-16 h-16 rounded-full bg-indigo-500" @click="para">
               <img src="" alt="">
             </div>
           </div>
           <div class="content ml-3 mt-1 w-full">
-            <div class="user_info flex items-center">
-              <div class="name font-semibold text-lg">Aimé-Désiré</div>
-              <div class="pseudo ml-3 font-normal text-gray-500">@dams9ix</div>
+            <div class="user_info flex flex-col justify-center">
+              <div class="name font-semibold text-lg leading-5">Comme projet comme projet</div>
+              <div class="-mt-1">
+                <span class="pseudo font-normal text-gray-500">@dams9ix</span>
+                <span class="mx-1 text-xl">·</span>
+                <span class="text-gray-500 font-normal">15h</span>
+              </div>
+            </div>
+            <div class="description mt-2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis dicta quod quis est temporibus ex deleniti iusto enim quaerat. Mollitia cum nesciunt vitae qui laudantium eaque culpa tempore tenetur dicta?
+              </p>
             </div>
             <div class="audio mt-4 w-full">
               <div class="music-player w-full h-16 flex items-center shadow-md rounded-xl border-2 border-gray-600 p-4">
@@ -75,7 +87,7 @@
                 </div>
               </div>
             </div>
-            <div class="post_action w-56 flex justify-between mt-4">
+            <div class="post_action w-11/12 pl-6 flex justify-between mt-4">
               <button class="like flex items-center">
                 <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6">
                 <span class="ml-1 font-medium text-gray-600">24</span>
@@ -96,7 +108,7 @@
 export default {
   methods: {
     para () {
-      const bio = document.querySelector('.bio')
+      const bio = document.querySelector('.description p')
       console.log(bio.innerHTML.length)
     }
   },
@@ -196,6 +208,30 @@ export default {
   .content_block {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+@media (max-width: 637px) {
+  .post {
+    margin-bottom: 150px;
+  }
+}
+
+@media (max-width: 465px) {
+  .pp {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 375px) {
+  .user_posts {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .post {
+    font-size: 14px;
   }
 }
 </style>
