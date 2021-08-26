@@ -1,5 +1,5 @@
 <template>
-  <div class="home mx-auto flex">
+  <div class="home relative mx-auto flex">
     <Navbar class="desktop" />
     <MobileNavbar class="mobile pt-10" />
     <div class="content_block relative w-full">
@@ -67,7 +67,7 @@
             </div>
             <div class="description mt-2">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis dicta quod quis est temporibus ex deleniti iusto enim quaerat. Mollitia cum nesciunt vitae qui laudantium eaque culpa tempore tenetur dicta?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis dicta quod quis est temporibus ex deleniti iusto enim quaerat. Mollitia cum nesciunt vitae qui laudantium eaque culpa tempore tenetur di
               </p>
             </div>
             <div class="audio mt-4 w-full">
