@@ -18,7 +18,7 @@
                 </div>
               </div>
               <div class="audio_file">
-                <input type="file" required />
+                <input type="file" name="file" id="file" required />
               </div>
             </form>
           </div>
@@ -40,17 +40,16 @@ export default {
   },
   mounted () {
     // Get a reference to the file input element
-    const inputElement = document.querySelector('input[type="file"]')
+    const inputElement = document.querySelector('#file')
     // Create a FilePond instance
     const pond = FilePond.create(inputElement, {
       onaddfile:(err, file) => {
-        console.log(err, file.file)
+        if (err) {
+          console.log(err)
+        }
+        this.file = file.file
       }
     })
-    FilePond.setOptions({
-      server: './',
-    })
-    this.file = pond.getFile()
     return pond
   },
   methods: {
