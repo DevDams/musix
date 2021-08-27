@@ -19,12 +19,45 @@
       >
         <h1 class="text-2xl text-myviolet font-extrabold">MuseX</h1>
       </div>
+      <div class="bg-black click_me text-white px-6 py-3" @click="select">
+        <p class="click_text">Click me</p>
+      </div>
+      <select name="cars" id="cars" class="absolute left-0 top-16" :class="open ? 'block' : 'hidden'">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      open: false
+    }
+  },
+  mounted() {
+    const selec = document.getElementById('cars')
+    const btn = document.querySelector('.click_text')
+    btn.innerHTML = selec.value
+  },
+  methods: {
+    select () {
+      this.open = !this.open
+      const selec = document.getElementById('cars')
+      const btn = document.querySelector('.click_text')
+      if (this.open) {
+        selec.size = selec.options.length
+      } else {
+        selec.size = 1
+      }
+      btn.innerHTML = selec.value
+    }
+  },
+}
 </script>
 
 <style scoped>
