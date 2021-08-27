@@ -2,7 +2,7 @@
   <div class="home mx-auto flex">
     <Navbar class="desktop" />
     <MobileNavbar class="mobile" />
-    <div class="content_block relative w-full h-screen">
+    <div class="content_block relative w-full">
       <div
         class="
           header

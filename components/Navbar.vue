@@ -140,6 +140,10 @@ button img.black {
   display: none;
 }
 
+.post_form {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 996px) {
   .navbar {
     width: 90px;
