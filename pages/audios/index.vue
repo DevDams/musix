@@ -27,10 +27,15 @@
       <div class="all_post px-6 mt-10 pb-24">
         <!-- Post model -->
         <div class="post relative flex border py-3 px-2 mb-11 rounded-lg">
-          <div class="absolute right-3 top-3 w-9 h-9 flex items-center justify-center bg-white rounded-full border-2 border-gray-100 shadow-md">
-            <button>
-              <img src="~/assets/svg/modif.svg" alt="">
-            </button>
+          <!-- Alert message -->
+          <div class="absolute top-0 left-0 rounded-lg alert_box w-full h-full bg-white flex items-center justify-center" :class="trashPost ? 'block' : 'hidden'">
+            <div class="alert border-2 w-3/4 h-40 rounded-lg border-gray-200 bg-white flex flex-col items-center justify-center shadow-xl">
+              <p class="text-lx font-medium">Etes-vous sur de vouloir supprimer ce poste ?</p>
+              <div class="btn w-40 flex items-center justify-around mt-3">
+                <button class="px-4 font-medium py-px border-2 border-black rounded-xl">Oui</button>
+                <button class="px-4 font-medium py-1 bg-black text-white rounded-xl" @click="cancelDelete">Non</button>
+              </div>
+            </div>
           </div>
           <div class="pp">
             <div class="pp w-16 h-16 rounded-full bg-indigo-500">
@@ -77,7 +82,7 @@
                 <img src="~assets/svg/share.svg" alt="share icon" class="h-6 w-6">
                 <span class="ml-1 font-medium text-gray-600">24</span>
               </button>
-              <button class="like flex items-center">
+              <button class="like flex items-center" @click="deletePost">
                 <img src="~assets/svg/trash.svg" alt="share icon" class="h-6 w-6">
               </button>
             </div>
@@ -89,7 +94,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      trashPost: false
+    }
+  },
+  methods: {
+    deletePost () {
+      this.trashPost = !this.trashPost
+    },
+    cancelDelete () {
+      this.trashPost = !this.trashPost
+    }
+  },
+}
 </script>
 
 <style scoped>
@@ -186,6 +205,14 @@ export default {}
 @media (max-width: 637px) {
   .all_post {
     padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 580px) {
+  .alert {
+    width: 90%;
+    padding: 0 10px;
+    text-align: center;
   }
 }
 

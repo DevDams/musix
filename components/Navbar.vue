@@ -37,8 +37,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/music-black.svg" alt="music icon" class="black" />
-            <img src="~assets/svg/music-white.svg" alt="music icon" class="white" />
+            <img src="~assets/svg/music-black.svg" alt="music icon" class="black music" />
+            <img src="~assets/svg/music-white.svg" alt="music icon" class="white music" />
             <span class="ml-2 font-semibold">Mes audios</span>
           </button>
         </nuxt-link>
@@ -117,6 +117,10 @@ export default {}
 <style scoped>
 img {
   width: 30px;
+}
+
+img.music {
+  width: 26px;
 }
 
 button img.white {
