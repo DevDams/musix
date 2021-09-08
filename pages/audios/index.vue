@@ -74,16 +74,15 @@
               </div>
             </div>
             <div class="post_action w-11/12 pl-6 flex justify-between mt-4">
-              <button class="like flex items-center">
-                <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6">
-                <span class="ml-1 font-medium text-gray-600">24</span>
-              </button>
-              <button class="like flex items-center">
-                <img src="~assets/svg/share.svg" alt="share icon" class="h-6 w-6">
-                <span class="ml-1 font-medium text-gray-600">24</span>
+              <button class="like flex items-center" @click="like = !like">
+                <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6" :class="like ? 'hidden' : 'block'">
+                <img src="~assets/svg/heart-red.svg" alt="heart icon" class="h-6 w-6" :class="like ? 'block' : 'hidden'">
+                <span class="ml-1 font-semibold text-gray-600" :class="like ? 'like' : ''">24</span>
+                <span class="action-text ml-1 font-semibold text-gray-600" :class="like ? 'like' : ''">j'aime</span>
               </button>
               <button class="like flex items-center" @click="deletePost">
                 <img src="~assets/svg/trash.svg" alt="share icon" class="h-6 w-6">
+                <span class="action-text ml-1 font-semibold text-gray-600">Supprimer</span>
               </button>
             </div>
           </div>
@@ -97,7 +96,8 @@
 export default {
   data () {
     return {
-      trashPost: false
+      trashPost: false,
+      like: false
     }
   },
   methods: {
@@ -173,6 +173,10 @@ export default {
   cursor: pointer;
 }
 
+.like {
+  color: #f03131;
+}
+
 @media (max-width: 996px) {
   .home {
     width: 700px;
@@ -220,6 +224,12 @@ export default {
   .pp {
     width: 56px;
     height: 56px;
+  }
+}
+
+@media (max-width: 440px) {
+  .action-text {
+    display: none;
   }
 }
 
