@@ -3,11 +3,7 @@
     <div class="post">
       <div class="post_form h-64 mx-auto flex flex-col border-2 border-gray-200 shadow-lg mt-20 rounded-xl bg-white z-50">
         <div class="title h-14 w-full px-4 flex items-center justify-end">
-<<<<<<< HEAD
-          <p class="add text-right rounded-full px-3 py-2 text-sm font-medium text-white bg-myblue shadow-md cursor-pointer">Ajoutez un nouvel audio</p>
-=======
           <p class="add text-right rounded-full px-3 py-1 text-sm font-medium text-white bg-myblue shadow-md cursor-pointer" @click="sendPost">Ajoutez un nouvel audio</p>
->>>>>>> 72d107ca4bded64178f2d1ad2a836959b3426039
         </div>
         <div class="form_field relative px-3 pt-2" :class="send ? 'active' : 'disactive'">
           <!-- form section -->
