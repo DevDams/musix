@@ -7,7 +7,7 @@
         </div>
         <div class="form_field px-4 pt-2 flex">
           <div class="pic">
-            <div class="profil_pic w-16 h-16 bg-myviolet rounded-full" @click="para">
+              <div class="profil_pic w-16 h-16 bg-myviolet rounded-full" @click="para">
               <img src="" alt="">
             </div>
           </div>
@@ -15,8 +15,8 @@
             <form action="">
               <div class="description relative">
                 <textarea v-model="content" name="description" id="description" placeholder="Dites quelque chose à propos de cet audio" class="w-96 h-32 p-2 border-2 border-gray-300 rounded-lg"></textarea>
-                <div class="description_length absolute bottom-2 right-3 text-right">
-                  <span>{{ content.length }}/150</span>
+                <div class="description_length absolute bottom-3 right-3 text-right">
+                  <span class="bg-white">{{ content.length }}/150</span>
                 </div>
               </div>
               <div class="audio_file">
@@ -97,7 +97,11 @@ textarea:focus {
 
 @media (max-width: 520px) {
   .post_form {
-    width: 90%;
+    width: 95%;
+  }
+
+  .pic {
+    width: 15%;
   }
 
   .pic {
@@ -113,8 +117,29 @@ textarea:focus {
     width: 85%;
   }
 
+  form {
+    width: 100%;
+  }
+
   .description textarea {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .post_form {
+    height: 380px;
+  }
+  .title {
+    height: 60px;
+  }
+  .form_field {
+    flex-direction: column;
+  }
+
+  .field {
+    width: 100%;
+    margin-left: 0;
   }
 }
 </style>

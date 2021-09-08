@@ -48,9 +48,9 @@
           </div>
         </div>
       </div>
-      <div class="user_posts w-full px-6 pt-12">
+      <div class="user_posts w-full px-6 pt-12 pb-24">
         <!-- Post model -->
-        <div class="post flex border py-3 px-2 mb-24 rounded-lg">
+        <div class="post flex border py-3 px-2 rounded-lg">
           <div class="pp">
             <div class="pp w-16 h-16 rounded-full bg-indigo-500" @click="para">
               <img src="" alt="">
@@ -212,7 +212,7 @@ export default {
 }
 
 @media (max-width: 637px) {
-  .post {
+  .user_posts {
     margin-bottom: 150px;
   }
 }

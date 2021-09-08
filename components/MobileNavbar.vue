@@ -32,13 +32,13 @@
         <nuxt-link to="/audios" class="audio_link">
           <button class="w-14 h-14 rounded-xl flex items-center justify-center">
             <img
-              src="~assets/svg/speaker-black.svg"
-              alt="speaker icon"
+              src="~assets/svg/music-black.svg"
+              alt="music icon"
               :class="audioBlack ? 'block' : 'hidden'"
             />
             <img
-              src="~assets/svg/speaker-white.svg"
-              alt="speaker icon"
+              src="~assets/svg/music-white.svg"
+              alt="music icon"
               :class="audioWhite ? 'block' : 'hidden'"
             />
           </button>

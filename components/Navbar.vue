@@ -37,8 +37,8 @@
               outline-none
             "
           >
-            <img src="~assets/svg/speaker-black.svg" alt="audio icon" class="black" />
-            <img src="~assets/svg/speaker-white.svg" alt="audio icon" class="white" />
+            <img src="~assets/svg/music-black.svg" alt="music icon" class="black" />
+            <img src="~assets/svg/music-white.svg" alt="music icon" class="white" />
             <span class="ml-2 font-semibold">Mes audios</span>
           </button>
         </nuxt-link>
