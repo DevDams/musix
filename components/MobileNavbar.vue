@@ -16,7 +16,7 @@
     >
       <div class="navbar_item w-96 mx-auto flex items-center justify-between">
         <nuxt-link to="/home" class="home_link">
-          <button class="w-14 h-14 rounded-xl flex items-center justify-center">
+          <button class="w-12 h-12 rounded-xl flex items-center justify-center">
             <img
               src="~assets/svg/home-black.svg"
               alt="home icon"
@@ -30,21 +30,23 @@
           </button>
         </nuxt-link>
         <nuxt-link to="/audios" class="audio_link">
-          <button class="w-14 h-14 rounded-xl flex items-center justify-center">
+          <button class="w-12 h-12 rounded-xl flex items-center justify-center">
             <img
               src="~assets/svg/music-black.svg"
               alt="music icon"
+              class="music"
               :class="audioBlack ? 'block' : 'hidden'"
             />
             <img
               src="~assets/svg/music-white.svg"
               alt="music icon"
+              class="music"
               :class="audioWhite ? 'block' : 'hidden'"
             />
           </button>
         </nuxt-link>
         <nuxt-link to="/new/post" class="post_link">
-          <button class="w-14 h-14 rounded-xl flex items-center justify-center">
+          <button class="w-12 h-12 rounded-xl flex items-center justify-center">
             <img
               src="~assets/svg/create-black.svg"
               alt="create icon"
@@ -58,7 +60,7 @@
           </button>
         </nuxt-link>
         <nuxt-link to="/profil" class="profil_link">
-          <button class="w-14 h-14 rounded-xl flex items-center justify-center">
+          <button class="w-12 h-12 rounded-xl flex items-center justify-center">
             <img
               src="~assets/svg/user-black.svg"
               alt="user icon"
@@ -155,6 +157,10 @@ export default {
 <style scoped>
 img {
   width: 30px;
+}
+
+img.music {
+  width: 26px;
 }
 
 .navbar {

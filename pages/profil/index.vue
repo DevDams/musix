@@ -23,16 +23,26 @@
       </div>
       <div class="profil_info">
         <div class="profil_image relative w-full h-32">
-          <div class="banner bg-green-300 h-32 flex items-center justify-center">
+          <div class="relative banner bg-green-300 h-32 flex items-center justify-center">
             <img src="~assets/svg/picture.svg" alt="picture icon" class="h-12 w-12">
-            <div class="edit_banner"></div>
+            <div class="edit_banner absolute bottom-2 right-2">
+              <button class="bg-black text-sm text-white px-3 py-1">Modifier bannière</button>
+            </div>
           </div>
           <div class="profil_pic absolute top-16 left-4 bg-indigo-500 h-28 w-28 border-4 border-white rounded-full">
             <img src="" alt="">
+            <div class="edit_profil_pic absolute -top-1 right-0">
+              <button class="bg-black text-sm text-white px-2 py-2 rounded-full shadow-lg">
+                <img src="~/assets/svg/camera.svg" alt="camera icon">
+              </button>
+            </div>
           </div>
           <div class="edit_profil absolute top-36 right-4">
-            <button class="border border-gray-300 font-semibold px-4 py-1 rounded-full bg-white">Editer le profil</button>
+            <button class="border border-gray-300 font-semibold px-4 py-1 rounded-full bg-white" @click="editProfil = !editProfil">Editer le profil</button>
           </div>
+        </div>
+        <div class="edit_box fixed w-full z-50 top-0 left-0 h-screen bg-white w-full flex items-center justify-center"  :class="editProfil ? 'block' : 'hidden'">
+          <EditProfil class="edit_card" :edit="editProfil" @closeEdit="closeEditProfil($event)" />
         </div>
         <div class="profil_text w-full h-38 mt-14 px-6">
           <div>
@@ -43,7 +53,7 @@
             </p>
             <div class="flex items-center mt-2">
               <img src="~assets/svg/calendar.svg" alt="calendar icon">
-              <p class="text-gray-500 ml-2">A rejoint MuseX en mars 2021</p>
+              <p class="text-gray-500 ml-2">inscrit depuis mars 2021</p>
             </div>
           </div>
         </div>
@@ -88,13 +98,11 @@
               </div>
             </div>
             <div class="post_action w-11/12 pl-6 flex justify-between mt-4">
-              <button class="like flex items-center">
-                <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6">
-                <span class="ml-1 font-medium text-gray-600">24</span>
-              </button>
-              <button class="like flex items-center">
-                <img src="~assets/svg/share.svg" alt="share icon" class="h-6 w-6">
-                <span class="ml-1 font-medium text-gray-600">24</span>
+              <button class="like flex items-center" @click="like = !like">
+                <img src="~assets/svg/heart-white.svg" alt="heart icon" class="h-6 w-6" :class="like ? 'hidden' : 'block'">
+                <img src="~assets/svg/heart-red.svg" alt="heart icon" class="h-6 w-6" :class="like ? 'block' : 'hidden'">
+                <span class="ml-1 font-semibold text-gray-600" :class="like ? 'like' : ''">24</span>
+                <span class="action-text ml-1 font-semibold text-gray-600" :class="like ? 'like' : ''">j'aime</span>
               </button>
             </div>
           </div>
@@ -106,10 +114,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      like: false,
+      editProfil: false
+    }
+  },
   methods: {
     para () {
       const bio = document.querySelector('.description p')
       console.log(bio.innerHTML.length)
+    },
+    closeEditProfil (close) {
+      this.editProfil = close
     }
   },
 }
@@ -143,6 +160,14 @@ export default {
 .profil_text {
   padding-bottom: 25px;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.like {
+  color: #f03131;
+}
+
+.edit_box {
+  background-color: rgba(0, 0, 0, 0.37);
 }
 
 /* Music player */
@@ -221,6 +246,12 @@ export default {
   .pp {
     width: 56px;
     height: 56px;
+  }
+}
+
+@media (max-width: 440px) {
+  .edit_card {
+    width: 100%;
   }
 }
 
