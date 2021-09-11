@@ -13,7 +13,7 @@
           <textarea name="bio" id="bio" class="w-full h-28 px-2 py-2 border-2 border-gray-200 shadow-sm rounded-lg"></textarea>
         </div>
         <div class="submit_btn">
-          <button type="submit" class="submit text-center font-medium mt-1 px-10 py-1 text-white rounded-full">Enregistrer</button>
+          <button type="submit" class="submit text-center font-medium mt-1 px-10 py-1 text-white rounded-full" @click="update">Enregistrer</button>
         </div>
       </form>
     </div>
@@ -25,6 +25,9 @@ export default {
   methods: {
     closeEdit () {
       this.$emit('closeEdit', false)
+    },
+    update (e) {
+      e.preventDefault()
     }
   }
 }
